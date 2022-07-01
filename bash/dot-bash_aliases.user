@@ -41,7 +41,7 @@ function pushd() {
 alias cd="pushd"
 
 # ** list/history/reset/clear/src
-alias l="ls -latrh" # l - long list format, a - list all entries, t - sorted by time, r - reverse order, h - human readable
+alias l="ls -lAtrh" # l - long list format, a - list all entries excluding '.' and '..', t - sorted by time, r - reverse order, h - human readable
 alias h="history"
 alias r="reset"
 alias c="clear"
