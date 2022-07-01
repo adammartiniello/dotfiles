@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# * Bash
+# ** cd push popd
+# pushd, popd, dirs
+# -p : shows one dir per line
+# -v : shows the dir index number
+alias d="dirs -p -v"
+
+# Rremove duplicates for dir stack
+# https://unix.stackexchange.com/questions/288492/removing-duplicates-from-pushd-popd-paths
+function dedup() {
+    declare -a new=() copy=("${DIRSTACK[@]:1}")
+    declare -A seen
+    local v i
+    seen[$PWD]=1
+    for v in "${copy[@]}"
+    do if [ -z "${seen[$v]}" ]
+       then new+=("$v")
+	    seen[$v]=1
+       fi
+    done
+    dirs -c
+    for ((i=${#new[@]}-1; i>=0; i--))
+    do builtin pushd -n "${new[i]}" > /dev/null
+    done
+}
+
+function pushd() {
+    # if no argument is given then go to ~/, like 'cd'
+    if [ $# -eq 0 ]; then
+	DIR="${HOME}"
+    else
+	DIR="$1"
+    fi
+    
+    builtin pushd "$@" > /dev/null # don't echo output
+    dedup
+}
+
+alias cd="pushd"
