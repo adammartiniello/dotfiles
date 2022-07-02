@@ -48,6 +48,56 @@ alias c="clear"
 alias src="source ~/.bashrc"
 
 
+# * Git
+# References:
+# - https://github.com/GitAlias/gitalias
+# - https://github.com/algotech/dotaliases/blob/master/doc/bash/git_aliases.md
+# ** status
+alias gs="git status"
+alias gsb="git status -sb"
+
+# ** diff
+alias gd="git diff --color-words"
+alias gds="git diff --color-words --staged"
+
+# ** add
+alias ga="git add"
+
+# ** commit
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit -a" # automatically stage all edited and deleted files"
+# TODO: Investigate --fixup[(amend|reword)]:<commit>
+# See https://git-scm.com/docs/git-commit
+
+# ** log
+alias gl="git log --oneline"
+alias glg="git log --oneline --graph"
+alias grl="git reflog"
+alias gll="git log \
+      	  --graph \
+    	  --topo-order \
+    	  --decorate \
+    	  --all \
+    	  --boundary \
+    	  --date=short \
+    	  --abbrev-commit \
+    	  --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'"
+
+# ** branch
+alias gb='git branch -v'
+# Shows the git branches list sorted by the last commit time in ascending order
+alias gba='git for-each-ref --sort=committerdate refs/heads/ --format="%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
+# Shows the git branches list sorted by the last commit time in descending order
+alias gbd='git for-each-ref --sort=-committerdate refs/heads/ --format="%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset))"'
+
+# ** checkout
+alias gco="git checkout"
+
+# ** push/pull
+alias gpush="git push"
+alias gpull="git pull"
+
 # * Tmux
 alias tmux="tmux -2" # Force tmux to assume the terminal supports 256 colours
 alias tn="tmux new -s" # Usage: 'tn <tmux-session-name>
