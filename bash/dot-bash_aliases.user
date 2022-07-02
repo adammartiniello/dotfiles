@@ -57,3 +57,8 @@ alias tlp="tmux list-panes"
 alias ta="tmux a -t" # Get into specified tmux session; Usage: ta <tmux-session-name>
 alias tk="tmux kill-session -t" # Usage: 'tk <tmux-session-name>'
 alias tka="tmux kill-server"
+
+
+# * Crontab
+alias crone="crontab -e" # Edit the crontab file
+alias cronl="crontab -l | grep -v '"'"'^$'"'"' | grep -v '"'"'^#'"'"'" # Display the crontab file (only the active jobs)
