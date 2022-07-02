@@ -34,7 +34,7 @@ function pushd() {
 	DIR="$1"
     fi
     
-    builtin pushd "$@" > /dev/null # don't echo output
+    builtin pushd "$DIR" > /dev/null # don't echo output
     dedup
 }
 
