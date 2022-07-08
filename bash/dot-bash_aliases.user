@@ -48,6 +48,10 @@ alias c="clear"
 alias src="source ~/.bashrc"
 
 
+# * Emacs
+alias e="~/.emacs.d/misc/emacsclient_dwim.sh"
+
+
 # * Git
 # References:
 # - https://github.com/GitAlias/gitalias
