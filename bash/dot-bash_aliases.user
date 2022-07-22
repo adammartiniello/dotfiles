@@ -61,8 +61,8 @@ alias gs="git status"
 alias gsb="git status -sb"
 
 # ** diff
-alias gd="git diff --color-words"
-alias gds="git diff --color-words --staged"
+alias gd="git diff --color-words -w"
+alias gds="git diff --color-words --staged -w"
 
 # ** add
 alias ga="git add"
