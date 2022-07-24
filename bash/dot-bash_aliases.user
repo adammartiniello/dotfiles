@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
 
+# Contents:
+#
+#  Bash
+#    cd pushd popd
+#    list/history/reset/clear/src
+#  Emacs
+#  Git
+#    status
+#    diff
+#    add
+#    commit
+#    log
+#    branch
+#    checkout
+#    push/pull
+#  Tmux
+#  Crontab
+
 # * Bash
-# ** cd push popd
+# ** cd pushd popd
 # pushd, popd, dirs
 # -p : shows one dir per line
 # -v : shows the dir index number
@@ -41,7 +59,7 @@ function pushd() {
 alias cd="pushd"
 
 # ** list/history/reset/clear/src
-alias l="ls -lAtrh" # l - long list format, a - list all entries excluding '.' and '..', t - sorted by time, r - reverse order, h - human readable
+alias l="ls -lAtrh" # l - long list format, A - list all entries excluding '.' and '..', t - sorted by time, r - reverse order, h - human readable
 alias h="history"
 alias r="reset"
 alias c="clear"
